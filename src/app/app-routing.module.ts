@@ -10,7 +10,7 @@ import { HealthRecordComponent } from './pages/health-record/health-record.compo
 import { VisitRecordComponent } from './pages/visit-record/visit-record.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: '/login', pathMatch:'full'}, //Redirecciona a home cuando la ruta esta vacia
+  {path:'', redirectTo: 'login', pathMatch:'full'}, //Redirecciona a home cuando la ruta esta vacia
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
