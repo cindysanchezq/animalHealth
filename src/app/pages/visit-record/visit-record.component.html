@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="visit-record-container">
+    <div class="visit-record-box">
+        <h2 class="text-center">Detalles de la Consulta</h2>
+
+        <div class="animal-info text-center">
+            <h4>Paciente: {{ selectedAnimal.name }}</h4>
+            <p><strong>Raza:</strong> {{ selectedAnimal.raza }} <strong>Sexo:</strong> {{ selectedAnimal.sexo }}  <strong>Chip:</strong> 
+                {{ selectedAnimal.chip }} <strong>RH:</strong> {{ selectedAnimal.rh }}</p>
+        </div>
+
+        <div class="visit-details mt-4">
+            <h4 class="text-center mb-4">Información de la Consulta</h4>
+            <p><strong>Consulta:</strong> {{ visitDetails.consulta }}</p>
+            <p><strong>Fecha:</strong> {{ visitDetails.fecha }}</p>
+            <p><strong>Motivo:</strong> {{ visitDetails.motivo }}</p>
+            <p><strong>Diagnóstico:</strong> {{ visitDetails.diagnostico }}</p>
+            <p><strong>Tratamiento:</strong> {{ visitDetails.tratamiento }}</p>
+        </div>
+
+        <!-- Sección de Exámenes Realizados -->
+        <div class="visit-exams mt-4">
+            <h4 class="text-center mb-4">Exámenes Realizados</h4>
+            <ul class="list-group">
+                <li *ngFor="let examen of visitDetails.examenes" class="list-group-item">
+                    <a href="#" class="exam-link" (click)="preventLinkDefault($event)">{{ examen }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" (click)="goBack()">Volver</button>
+        </div>
+    </div>
+</div>

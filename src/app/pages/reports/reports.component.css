@@ -1,0 +1,55 @@
+/* Reseteo de márgenes y paddings */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background container */
+.report-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #a7ded3; /* Color de fondo */
+}
+
+/* Report box */
+.report-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Inputs */
+.report-input {
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Botones */
+.btn-primary, .btn-secondary {
+    border-radius: 25px;
+    padding: 10px 20px;
+    background-color: #ff7878;
+    border: none;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: #ff5656;
+}
+
+/* Reporte generado */
+.reporte-generado {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+

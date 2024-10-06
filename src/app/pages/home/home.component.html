@@ -1,0 +1,58 @@
+
+<app-header></app-header>
+
+    
+<div class="home-container pt-5">
+    <div class="home-box">
+        <!-- Bienvenida -->
+        <div class="text-center mb-4">
+            <img src="assets/maria.avif" alt="Animal Health Logo" class="logo-img">
+        </div>
+
+        <h2 class="text-center">¡Bienvenido, {{ userName }}!</h2>
+        <p class="text-center">Este es el resumen del estado actual de salud de los animales bajo tu cuidado.</p>
+
+        <!-- Botones de acceso rápido -->
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <div class="d-grid">
+                    <a routerLink="/animalRegister" class="btn btn-primary btn-home">Registrar Nuevo Animal</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="d-grid">
+                    <a routerLink="/clinicalHistory" class="btn btn-primary btn-home">Registrar Consulta</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="d-grid">
+                    <a routerLink="/reports" class="btn btn-primary btn-home">Generar Reportes</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="d-grid">
+                    <a routerLink="/healthRecord" class="btn btn-primary btn-home">Acceder a Registros de Salud</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicadores del dashboard -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-4 dashboard-indicator">
+                    <h5>Estadísticas de Animales</h5>
+                    <canvas id="animalChart"></canvas> <!-- Gráfico de estadísticas de animales -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-4 dashboard-indicator">
+                    <h5>Próximos Exámenes y Tratamientos</h5>
+                    <ul>
+                        <li>Examen para Animal 1 - Mañana</li>
+                        <li>Vacunación para Animal 2 - En 3 días</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

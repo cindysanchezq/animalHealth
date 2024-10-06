@@ -1,0 +1,79 @@
+/* Reseteo de márgenes y paddings */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a7ded3; /* Color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Register box */
+.register-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+
+/* Form elements */
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+   
+}
+h2{
+    font-size:20px
+}
+
+.form-control {
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+}
+
+.btn-register {
+    background-color: #3bbcb6;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.btn-register:hover {
+    background-color: #32a7a0;
+}
+
+/* Links */
+.login-link {
+    color: #3bbcb6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+span{
+    font-size: 12px;
+    
+}
+a{
+    font-size: 12px;
+}

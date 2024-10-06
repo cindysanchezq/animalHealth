@@ -1,0 +1,123 @@
+/* Reseteo de márgenes y paddings */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background container */
+.register-animal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #a7ded3; /* Color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Form box */
+.register-animal-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Logo image */
+.logo-img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Formulario */
+form {
+    margin-top: 20px;
+}
+
+.form-control {
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botón Guardar */
+.btn-save {
+    background-color: #3bbcb6;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-save:hover {
+    background-color: #32a7a0;
+}
+
+/* Botón de Cargar Imagen/Archivos */
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Imagen del animal */
+.img-fluid {
+    max-width: 200px;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    margin-bottom: 10px;
+}
+
+/* Icono de carga */
+.bi-upload {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .register-animal-box {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+}
+
+/* Centrar la imagen y el botón */
+.cargar-imagen {
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.img-fluid {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px; /* Tamaño de la imagen */
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    margin-bottom: 10px;
+}
+
+.cargar-imagen:hover {
+    text-decoration: underline;
+}

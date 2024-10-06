@@ -1,0 +1,134 @@
+/* Reseteo de márgenes y paddings */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background container */
+.clinical-history-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a7ded3; /* Color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Form box */
+.clinical-history-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+
+/* Campo de búsqueda */
+#searchAnimal {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Lista de animales */
+.list-group-item {
+    cursor: pointer;
+    text-align: left;
+    background-color: #e9ecef;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+}
+
+.list-group-item:hover {
+    background-color: #d4f1f4;
+}
+
+/* Imagen del Animal */
+.animal-img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    margin-bottom: 10px;
+}
+
+/* Nombre del Animal */
+.animal-name {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botones */
+
+.btn-group-vertical .btn {
+    margin-bottom: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 100%;
+}
+.btn-save {
+    background-color: #28a745;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.btn-danger, .btn-info, .btn-success {
+    width: 120px;
+    border-radius: 25px;
+    margin: 5px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Formulario */
+.form-control {
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Etiquetas */
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .clinical-history-box {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    #searchAnimal {
+        width: 100%;
+    }
+}

@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<div class="report-container">
+    <div class="report-box" >
+        <div class="row d-flex justify-content-center align-items-center">
+            <!-- Fecha Inicial y Final -->
+            <div class="col-md-6 text-center mb-3">
+                <label for="fechaInicial">Fecha Inicial:</label>
+                <input type="text" id="fechaInicial" class="form-control report-input" placeholder="DD/MM/AAAA">
+            </div>
+            <div class="col-md-6 text-center mb-3">
+                <label for="fechaFinal">Fecha Final:</label>
+                <input type="text" id="fechaFinal" class="form-control report-input" placeholder="DD/MM/AAAA">
+            </div>
+
+            <!-- Selectores: Tipo de Reporte, Animal, Cuidador -->
+            <div class="col-md-4 text-center mb-3">
+                <label for="tipoReporte">Tipo de Reporte:</label>
+                <select id="tipoReporte" class="form-control report-input">
+                    <option value="historial">Historial Clínico Completo</option>
+                    <option value="indicadores">Indicadores de Salud</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 text-center mb-3">
+                <label for="animal">Animal:</label>
+                <select id="animal" class="form-control report-input">
+                    <option value="tom">Tom</option>
+                    <option value="max">Max</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 text-center mb-3">
+                <label for="cuidador">Cuidador:</label>
+                <select id="cuidador" class="form-control report-input">
+                    <option value="maria">María</option>
+                    <option value="juan">Juan</option>
+                    <option value="pedro">Pedro</option>
+                </select>
+            </div>
+
+            <!-- Botón para generar reporte -->
+            <div class="col-md-12 text-center mt-4">
+                <button class="btn btn-primary" (click)="generarReporte()">Generar Reporte</button>
+            </div>
+        </div>
+
+        <!-- Contenedor del Reporte Generado -->
+        <div *ngIf="reporteGenerado" class="mt-5">
+            <h4 class="text-center">Reporte Generado</h4>
+
+            <!-- Historial Clínico Completo -->
+            <div *ngIf="tipoReporte === 'historial'">
+                <h5>Historial Clínico Completo de {{ selectedAnimal.name }}</h5>
+                <ul>
+                    <li *ngFor="let visita of selectedAnimal.visits">
+                        <strong>Consulta: {{ visita.consulta }}</strong><br>
+                        Fecha: {{ visita.fecha }}<br>
+                        Motivo: {{ visita.motivo }}<br>
+                        Diagnóstico: {{ visita.diagnostico }}<br>
+                        Tratamiento: {{ visita.tratamiento }}<br>
+                        Exámenes: 
+                        <ul>
+                            <li *ngFor="let examen of visita.examenes">{{ examen }}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Indicadores de Salud -->
+            <div *ngIf="tipoReporte === 'indicadores'">
+                <h5>Indicadores de Salud de {{ selectedAnimal.name }}</h5>
+                <p><strong>Peso:</strong> {{ selectedAnimal.peso }}</p>
+                <p><strong>RH:</strong> {{ selectedAnimal.rh }}</p>
+                <p><strong>Vacunas:</strong> {{ selectedAnimal.vacunas }}</p>
+                <p><strong>Edad:</strong> {{ selectedAnimal.edad }} años</p>
+
+                <!-- Concepto Médico -->
+                <div class="mt-4">
+                    <h5>Concepto Médico:</h5>
+                    <p>{{ conceptoMedico }}</p>
+                </div>
+            </div>
+
+            <!-- Botón para descargar el reporte -->
+            <div class="text-center mt-4">
+                <button class="btn btn-secondary" (click)="descargarReporte()">Descargar Reporte</button>
+            </div>
+        </div>
+    </div>
+</div>

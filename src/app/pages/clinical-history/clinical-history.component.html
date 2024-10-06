@@ -1,0 +1,80 @@
+<app-header></app-header>
+
+<div class="clinical-history-container">
+    <div class="clinical-history-box">
+        <div class="row d-flex justify-content-center align-items-center">
+            <!-- Buscar Animal (Visible solo si no hay un animal seleccionado) -->
+            <div class="col-md-12 text-center mb-4" *ngIf="searchVisible">
+                <label for="searchAnimal">Buscar Animal:</label>
+                <input type="text" id="searchAnimal" class="form-control" (input)="filterAnimals($event)" placeholder="Buscar por nombre o ID...">
+                <ul class="list-group mt-2" *ngIf="filteredAnimals.length > 0">
+                    <li *ngFor="let animal of filteredAnimals" class="list-group-item" (click)="selectAnimal(animal)">
+                        <strong>{{ animal.name }} (ID: {{ animal.id }})</strong><br>
+                        <small>Raza: {{ animal.raza }} | Sexo: {{ animal.sexo }}   </small>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Información del Animal Seleccionado -->
+            <div class="col-md-4 text-center" *ngIf="selectedAnimal">
+                <img [src]="selectedAnimal.imageUrl" alt="Foto del Animal" class="animal-img">
+                <h4 class="animal-name">{{ selectedAnimal.name }}</h4>
+                <p>Raza: {{ selectedAnimal.raza }}</p>
+                <p>Edad: {{ selectedAnimal.edad }} años</p>
+                <p>Sexo: {{ selectedAnimal.sexo }}</p>
+                <p>Chip: {{ selectedAnimal.chip }}</p>
+                <p>Peso ultima consulta: {{ selectedAnimal.peso }}</p>
+                <p>RH: {{ selectedAnimal.rh }}</p>
+
+                 <!-- Botones para Exámenes, Tratamientos y Adjuntar Documentos -->
+                <div class="btn-group-vertical mt-3">
+                    <button type="button" class="btn btn-secondary">Agregar nuevos Exámenes</button>
+                    <button type="button" class="btn btn-secondary">Agregar nuevos Tratamientos</button>
+                    <button type="button" class="btn btn-secondary">Adjuntar Documentos/Imágenes</button>
+                </div>
+
+            </div>
+
+            <!-- Indicadores de Salud -->
+            <div class="col-md-8" *ngIf="selectedAnimal">
+                <h4 class="text-center">REGISTRO DE HISTORIA CLINICA</h4>
+
+                <form [formGroup]="clinicalForm" (ngSubmit)="onSubmit()">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="peso">Peso:</label>
+                            <input type="text" id="peso" class="form-control" >
+                        </div>
+                        <div class="col-md-4">
+                            <label for="rh">RH:</label>
+                            <input type="text" id="rh" class="form-control" >
+                        </div>
+                        <div class="col-md-4">
+                            <label for="vacunas">Vacunas:</label>
+                            <input type="text" id="vacunas" class="form-control" formControlName="vacunas" >
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="enfermedades">Enfermedades:</label>
+                        <textarea id="enfermedades" class="form-control" formControlName="enfermedades"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="examenes">Exámenes de Laboratorio:</label>
+                        <textarea id="examenes" class="form-control" formControlName="examenes"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tratamientos">Tratamientos médicos:</label>
+                        <textarea id="tratamientos" class="form-control" formControlName="tratamientos"></textarea>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

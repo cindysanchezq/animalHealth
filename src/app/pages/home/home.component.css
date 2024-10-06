@@ -1,0 +1,73 @@
+/* Reseteo de márgenes y paddings */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background container */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a7ded3; /* Color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Home box */
+.home-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Logo image */
+.logo-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/* Botones de acceso rápido */
+.btn-home {
+    background-color: #3bbcb6;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.btn-home:hover {
+    background-color: #32a7a0;
+}
+
+/* Indicadores del dashboard */
+.dashboard-indicator {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-indicator h5 {
+    font-weight: 600;
+    color: #6C4E31;
+}
+
+.dashboard-indicator ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-indicator ul li {
+    padding: 5px 0;
+    font-size: 1rem;
+    color: #6c757d;
+}

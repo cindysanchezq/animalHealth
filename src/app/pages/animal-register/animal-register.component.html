@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+
+<div class="register-animal-container pt-5">
+    <div class="register-animal-box">
+        <!-- Logo y Título -->
+        <div class="d-flex justify-content-center align-items-center mb-4">
+            <img src="../../../assets/logo.png" alt="Animal Health Logo" class="logo-img">
+            <h4 class="ms-3">Registro Animal</h4>
+        </div>
+
+        <!-- Formulario de Registro Animal -->
+        <form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group text-start mb-3">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" class="form-control" formControlName="name" placeholder="Ingrese el nombre del animal">
+                    </div>
+                    <div class="form-group text-start mb-3">
+                        <label for="name">Edad</label>
+                        <input type="number" id="age" class="form-control" formControlName="age" placeholder="Ingrese la edad del animal">
+                    </div>
+                    <div class="form-group text-start mb-3">
+                        <label for="species">Especie</label>
+                        <input type="text" id="species" class="form-control" formControlName="species" placeholder="Ingrese la especie">
+                    </div>
+                    <div class="form-group text-start mb-3">
+                        <label for="habitat">Hábitat</label>
+                        <input type="text" id="habitat" class="form-control" formControlName="habitat" placeholder="Ingrese el hábitat">
+                    </div>
+                    <div class="form-group text-start mb-3">
+                        <label for="food">Tipo de comida</label>
+                        <input type="text" id="food" class="form-control" formControlName="food" placeholder="Ingrese el tipo de comida">
+                    </div>
+                    
+                    <div class="form-group text-start mb-3">
+                        <label for="caretaker">Cuidador</label>
+                        <select id="caretaker" class="form-control" formControlName="caretaker">
+                            <option value="" disabled>Seleccione un cuidador</option>
+                            <option *ngFor="let caretaker of caretakers" [value]="caretaker">{{caretaker}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Imagen y botón de carga -->
+                <div class="col-md-6 text-center">
+                    <img src="../../../assets/image.svg" alt="Cargar imagen" class="img-fluid mb-2">
+                    <button type="button" class="btn btn-link cargar-imagen">Cargar Imagen</button>
+                </div>
+                
+            </div>
+
+
+            <!-- Botón Guardar -->
+            <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-save">GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

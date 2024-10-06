@@ -1,0 +1,45 @@
+
+header {
+    background-color:#e6f0ee; 
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #2A3D53;
+}
+
+.navbar-brand .logo-img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+    color: #2A3D53;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #32a7a0; /* Oscurece el color al pasar el ratón */
+}
+
+/* Botón del menú para pantallas pequeñas */
+.navbar-toggler {
+    border-color: #007bff;
+}
+
+.navbar-toggler-icon {
+    background-color: #007bff;
+}
+
+.navbar-nav .nav-item:last-child .nav-link {
+    color: #d45151; 
+    font-weight: bold;
+}
